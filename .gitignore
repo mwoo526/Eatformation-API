@@ -1,0 +1,17 @@
+# node.js
+**/node_modules/
+npm-debug.log
+yarn-error.log
+
+# config
+
+# others
+*.log
+*.xml
+*.iml
+
+.vscode/settings.json
+
+
+# MacOs files
+.DS_Store

@@ -1,0 +1,12 @@
+{
+  "lambda": {
+    "role": "Eatformation-API-executor",
+    "name": "Eatformation-API",
+    "region": "ap-northeast-2"
+  },
+  "api": {
+    "id": "zfhwg0i742",
+    "module": "app",
+    "url": "https://zfhwg0i742.execute-api.ap-northeast-2.amazonaws.com/latest"
+  }
+}
