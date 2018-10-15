@@ -1,0 +1,17 @@
+{
+  "host_mtrace": "http://api.mtrace.go.kr",
+  "user_id": "1101116559459",
+  "api_key": "BbEDLMjiGJPYTgdKMume",
+
+  "host_ekape": "http://data.ekape.or.kr",
+  "host_data": "http://apis.data.go.kr",
+  "service_key": "SAIjCOJD2jM6a2LPmtDSytpPeLiDF6ncpxuFGxUkqVz%2F1W0JLdJCgRXDnF21LsJC5f027vhvhsnhEb%2FwhmXDlQ%3D%3D",
+
+  "pig_traceability": "/rest/pigTraceabilityInfo.xml",
+  "pig_butchery": "/rest/pig/butchery/pigButcheryInfoDtl",
+  "pig_grade": "/openapi-data/service/user/grade/confirm/pig",
+  "pig_part_grade": "/openapi-data/service/user/grade/confirm/pigPart",
+
+  "farm_detail_info": "/1543000/FarmServiceInfo/getFarmAreaInfo",
+  "farm_total_info": "/1543000/FarmService/getFarmAreaStatInfo"
+}

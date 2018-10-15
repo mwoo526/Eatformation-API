@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "local": "node app",
-    "start": "claudia create --name Eatformation-API --region ap-northeast-2 --api-module app",
-    "deploy": "claudia update"
+    "start": "claudia create --name Eatformation-API --region ap-northeast-2 --api-module app --policies policies --configure-db",
+    "deploy": "claudia update",
+    "reconfigure": "claudia update --configure-db"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,10 @@
   },
   "homepage": "https://github.com/itda-do/Eatformation-API#readme",
   "dependencies": {
+    "aws-sdk": "^2.334.0",
     "claudia-api-builder": "^4.1.1",
-    "request": "^2.88.0",
-    "xml-js": "^1.6.8"
+    "fast-xml-parser": "^3.12.5",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "claudia": "^5.1.2"
