@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "local": "node app",
+    "collector": "node ./modules/utils/collector/collector",
     "start": "claudia create --name Eatformation-API --region ap-northeast-2 --api-module app --policies policies --configure-db",
     "deploy": "claudia update",
     "reconfigure": "claudia update --configure-db"
@@ -23,7 +24,8 @@
     "aws-sdk": "^2.334.0",
     "claudia-api-builder": "^4.1.1",
     "fast-xml-parser": "^3.12.5",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "claudia": "^5.1.2"

@@ -7,6 +7,7 @@
      * consoles
      */
     const log = console.log;
+    const error = console.error;
 
     /**
      * Generators
@@ -106,7 +107,7 @@
     const contains = curry((list, target) => list.includes(target));
 
     global.ff = {
-        log,
+        log, error,
         identity, not, noop, negate,
         isUndefined, isArray, isPlainObject, isString,
         toString,

@@ -9,9 +9,9 @@ const dynamoDB = new aws.DynamoDB.DocumentClient();
 const {
     getPigTraceability, getPigButchery,
     getPigGrade, getPigPartGrade,
-    getFarmDetailInfo, getFarmTotalInfo } = require('./app/api/tracking_api');
+    getFarmDetailInfo, getFarmTotalInfo } = require('./api/tracking_api');
 
-const trackingApiInfo = require('./app/api/config/tracking_api_info');
+const trackingApiInfo = require('./config/tracking_api_info');
 
 api.get(`${trackingApiInfo.pig_traceability}`, () => {
     'use strict';
@@ -49,15 +49,76 @@ api.get(`${trackingApiInfo.farm_total_info}`, () => {
         getFarmTotalInfo());
 });
 
+module.exports = api;
+
+/**
+ * Test code
+ * @description Test API data set on local
+ */
 // go(getPigButchery(), a => JSON.stringify(a), log);
-// go(getFarmTotalInfo(), a => JSON.stringify(a), log);
 // go(getFarmDetailInfo(), a => JSON.stringify(a), log);
 // go(getPigTraceability(), a => JSON.stringify(a), log);
 // go(getPigGrade(), a => JSON.stringify(a), log);
 // go(getPigPartGrade(), a => JSON.stringify(a), log);
+// go(getFarmTotalInfo(), log);
 
-module.exports = api;
+/**
+ * Example code
+ * @description Interface to dynamoDB
+ */
 
 
+// Create new user
+// api.post('/user', (req) => {
+//     'use strict';
+//     const params = {
+//         TableName: req.env.tableName,
+//         Item: {
+//             userid: req.body.userId,
+//             name: req.body.name,
+//             age: req.body.age
+//         }
+//     };
+//     // return dynamo result directly
+//     return dynamoDB.put(params).promise();
+// }, { success: 201 }); // Return HTTP status 201 - Created when successful
+//
+// // get user for {id}
+// api.get('/user/{id}', (req) => {
+//     'use strict';
+//     var id, params;
+//     // Get the id from the pathParams
+//     id = req.pathParams.id;
+//     params = {
+//         TableName: req.env.tableName,
+//         Key: {
+//             userid: id
+//         }
+//     };
+//
+//     // post-process dynamo result before returning
+//     return dynamoDB.get(params).promise().then((response) => {
+//         return response.Item;
+//     });
+// });
+//
+// // delete user with {id}
+// api.delete('/user/{id}', (req) => {
+//     'use strict';
+//     var id, params;
+//     // Get the id from the pathParams
+//     id = req.pathParams.id;
+//     params = {
+//         TableName: req.env.tableName,
+//         Key: {
+//             userid: id
+//         }
+//     };
+//     // return a completely different result when dynamo completes
+//     return dynamoDB.delete(params).promise()
+//         .then(() => {
+//             return 'Deleted user with id "' + id + '"';
+//         });
+// }, {success: { contentType: 'text/plain'}});
 
-api.addPostDeployConfig('tableName', 'DynamoDB Table Name:', 'configure-db');
+// api.addPostDeployConfig('tableName', 'DynamoDB Table Name:', 'configure-db');

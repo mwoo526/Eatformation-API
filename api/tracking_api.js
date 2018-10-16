@@ -1,7 +1,7 @@
 const request = require('request');
 const parser = require('fast-xml-parser');
 
-const trackingApiInfo = require('./config/tracking_api_info');
+const trackingApiInfo = require('../config/tracking_api_info');
 
 // https://zfhwg0i742.execute-api.ap-northeast-2.amazonaws.com/latest/rest/pigTraceabilityInfo.xml
 const getPigTraceability = () => {
@@ -68,7 +68,7 @@ const getFarmDetailInfo  = () => {
 }
 
 // https://zfhwg0i742.execute-api.ap-northeast-2.amazonaws.com/latest/1543000/FarmService/getFarmAreaStatInfo
-const getFarmTotalInfo  = () => {
+const getFarmTotalInfo = () => {
     const endPoint = trackingApiInfo.host_data + trackingApiInfo.farm_total_info + `?serviceKey=${trackingApiInfo.service_key}`;
     const qs = {
         pageNo: 1,
@@ -81,6 +81,12 @@ const getFarmTotalInfo  = () => {
     return get(endPoint, qs);
 }
 
+/**
+ * Request npm module [ get, post ]
+ * @param endPoint
+ * @param qs
+ * @returns {Promise<any>}
+ */
 const get = (endPoint, qs) => new Promise((resolve, reject) => {
     request.get({
         url: endPoint,

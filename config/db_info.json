@@ -1,0 +1,12 @@
+{
+  "url": "https://ap-northeast-2.console.aws.amazon.com/dynamodb/home?region=ap-northeast-2",
+  "region": "ap-northeast-2",
+
+  "tb_pig_traceability": "TB_PIG_TRACEABILITY",
+  "tb_pig_butchery": "TB_PIG_BUTCHERY",
+  "tb_pig_grade": "TB_PIG_GRADE",
+  "tb_pig_part_grade": "TB_PIG_PART_GRADE",
+
+  "tb_farm_total_info": "TB_FARM_TOTAL_INFO",
+  "tb_farm_detail_info": "TB_FARM_DETAIL_INFO"
+}
